@@ -1,0 +1,39 @@
+##
+## .gitignore
+## CSC160 Programming Assignment Template
+## Ashton Hellwig
+##
+
+# Tex
+doc/user_docs/main.*
+!doc/user_docs/main.bib
+!doc/user_docs/main.tex
+
+# CPP
+*.bc
+*.bin
+*.native
+*.o
+*.out
+*.s
+**/build/**
+*.gcda
+*.gcno
+**/out/**
+!**/out/bin/.gitkeep
+!**/out/obj/test/.gitkeep
+!**/out/obj/.gitkeep
+!**/out/obj/test/.gitkeep
+!**/out/doc/.gitkeep
+!**/out/doc/doxygen/.gitkeep
+
+# Automake
+**/autom4te.cache/**
+*.m4
+*.h.in
+configure
+depcomp
+install-sh
+Makefile.in
+missing
+*.log
