@@ -6,7 +6,7 @@
  * the previously mentioned compiler flags must be used.
  * @date 2020-04-14
  *
- * Assignment: Module 4 Chapter 7 Programming Assignment
+ * Assignment: Module 4 Chapter 8 Programming Assignment
  * Description: This file contains macros, definitions, and attribues when
  * either compiling with `-DDebug` or without `-DNDEBUG`. To utilize these
  * functions, the previously mentioned compiler flags must be used.

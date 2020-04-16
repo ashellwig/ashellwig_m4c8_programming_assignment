@@ -5,7 +5,7 @@
  * in the programming assignments for FRCC's CSC160 at CCCOnline.
  * @date 2020-04-14
  *
- * Assignment: Module 4 Chapter 7 Programming Assignment
+ * Assignment: Module 4 Chapter 8 Programming Assignment
  * Description: This file contains the definitions of exceptions classes to be
  * used in the programming assignments for FRCC's CSC160 at CCCOnline.
  * functions, the previously mentioned compiler flags must be used.
@@ -21,7 +21,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpragmas"
 #pragma GCC diagnostic ignored "-Wc++17-extensions"
-namespace chapter7::ashwig_exceptions {
+namespace chapter8::ashwig_exceptions {
 /**
  * @brief Provides exception types for additional debugging information.
  */
@@ -41,7 +41,7 @@ public:
   }
 };
 } // namespace exceptions
-} // namespace chapter7::ashwig_exceptions
+} // namespace chapter8::ashwig_exceptions
 #pragma GCC diagnostic pop
 
 #endif // !ASHWIG_EXCEPTIONS_HH

@@ -5,7 +5,7 @@
  *   system-dependent Windows libraries.
  * @date 2020-04-02
  *
- * Assignment: Module 4 Chapter 7 Programming Assignment
+ * Assignment: Module 4 Chapter 8 Programming Assignment
  * Description: This file contains global function definitions used to emulate
  *   system-dependent Windows libraries.
  * Instructor: Jeffrey Hemmes

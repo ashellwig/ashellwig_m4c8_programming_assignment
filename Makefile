@@ -1,5 +1,5 @@
 # vim: set ts=2 sw=2 ft=sh:
-## Module 4 Chapter 7 Program
+## Module 4 Chapter 8 Program
 ## Ashton S. Hellwig
 ## Date: 14 April 2020
 ## Instructor: Jeffrey Hemmes
@@ -8,7 +8,7 @@
 ##
 
 # --- Variables ---
-PROGRAM := out/bin/ashellwig_m4c7_programming_assignment.bin
+PROGRAM := out/bin/ashellwig_m4c8_programming_assignment.bin
 CXX := /usr/bin/g++
 DOXYGEN := /usr/bin/doxygen
 RM := /bin/rm
@@ -33,10 +33,10 @@ LFLAGS := \
 
 # --- Test Variables ---
 TEST_PROGRAM := out/bin/test
-TEST_SRC := test/catch_main.cxx src/chapter7.cxx
+TEST_SRC := test/catch_main.cxx src/chapter8.cxx
 TEST_INCLUDES := -isystem include/catch2 -Iinclude -Itest/include
 TEST_OBJS := $(addprefix out/obj/test/, $(notdir $(TEST_SRC:.cxx=.o)))
-TEST_OBJS += out/obj/test/chapter7.o
+TEST_OBJS += out/obj/test/chapter8.o
 TEST_CXXFLAGS := \
 	-std=c++11 \
 	-ggdb
@@ -71,8 +71,8 @@ out/obj/%.o: src/%.cxx
 # --- Tests ---
 test: debug
 	$(CXX) $(CXXFLAGS) \
-		-c src/chapter7.cxx \
-		-o out/obj/test/chapter7.o \
+		-c src/chapter8.cxx \
+		-o out/obj/test/chapter8.o \
 		-I$(INCLUDES)
 
 	$(CXX) $(TEST_CXXFLAGS) \
@@ -86,7 +86,7 @@ test: debug
 		$(TEST_INCLUDES) -I$(INCLUDES)
 
 	$(CXX) $(TEST_LFLAGS) -o out/bin/test.bin \
-		out/obj/test/chapter7.o \
+		out/obj/test/chapter8.o \
 		out/obj/test/catch_main.o \
 		out/obj/test/TestCase.o \
 		$(TEST_INCLUDES) -I$(INCLUDES)

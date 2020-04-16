@@ -1,5 +1,5 @@
 %
-% Module 4 Chapter 7 Program Documentation
+% Module 4 Chapter 8 Program Documentation
 % CSC160-C00: Computer Science I (C++) (Jeffrey Hemmes)
 % Author: Ashton Hellwig
 % Date: 02 April 2020
@@ -52,7 +52,7 @@
   % Bibliography Setup
   \addbibresource{main.bib}
   \DeclareBibliographyCategory{consulted}
-  \addtocategory{consulted}{cpp:getline}
+  \addtocategory{consulted}{textbook}
   % \newcommand{\CiteSection}[2]{%
     % (\autocite{#1}, ~\S {#1})%
   % }
@@ -182,7 +182,7 @@
   \renewcommand{\baselinestretch}{.9}
 
   %% Title page
-  \title{Chapter 7 Programming Assignment Documentation}
+  \title{Chapter 8 Programming Assignment Documentation}
   \author{Ashton Hellwig}
   \date\today
   \setcounter{tocdepth}{3}
@@ -190,7 +190,7 @@
   %% Subsequent pages
   \lhead{CSC160}
   \rhead{Computer Science I (C++)}
-  \lfoot{M4C7Program}
+  \lfoot{M4C8Program}
   \rfoot{A. Hellwig}
 
 
@@ -201,7 +201,6 @@
   \tableofcontents
   \listofalgorithms
   \lstlistoflistings
-  \listoffigures
   \newpage
 
 
@@ -209,58 +208,30 @@
   \section{Problem Analysis}
     The problem states:
     \begin{mdframed}[backgroundcolor=green!20]
-      This assignment relates to content from Chapter 7 of the eText.
+      This assignment relates to content from Chapter 8 of the eText.
 
       \textbf{Instructions}\vspace{-8pt}
       \begin{enumerate}
         \item Review the general programming assignment instructions.
-        \item Write a program that reads in a line consisting of a student`s
-          name (first and last), Social Security number, user ID, and password.
-          \begin{itemize}
-            \item Use |std::getline()| not |std::cin| so you can demonstrate an
-              understanding of the string manipulation concepts. For an example
-              of how getline works see example code
-              \href{http://www.cplusplus.com/reference/string/string/getline}%
-              {here}.
-          \end{itemize}
-        \item The program outputs the string in which all the digits of the
-          Social Security number and all the characters in the password are
-          replaced by x.
-          \begin{itemize}
-            \item The Social Security number is in the form 000-00-0000, and the
-              user ID and the password do not contain any spaces.
-          \end{itemize}
-        \item Your program should not use the operator [] to access a string
-          element. Use the appropriate functions described in Table 7-1 of the
-          textbook.
+        \item Placeholder.
       \end{enumerate}
     \end{mdframed}
 
     \subsection{Data}
       \begin{itemize}
-        \item We should be using the functions described in \S~7-3a, Table 7-1
-          in order to access the string element (See Appendix
-          \ref{app:stringfuncs})
-        \item User ID and password contain no spaces.
-        \item Social security number is an |std::string| in the format of
-          \texttt{000-00-0000}.
+        \item Placeholder.
       \end{itemize}
 
     \subsection{Desired Output}
       \begin{lstlisting}[%
         language=bash,%
         columns=flexible,%
-        caption={ashellwig\_m4c7\_programming\_assignment output %
+        caption={ashellwig\_m4c8\_programming\_assignment output %
           (stdout)},%
         label={desiredoutput:stdout}%
     ]
-Enter a student's name, social security number, user id, and password
-in one line:
-Jane Smith 22-33-4444 S12345 password
-
-Jane Smith xx-xx-xxxx S12345 xxxxxxxx
-Press any key to continue...
-      \end{lstlisting}
+Placeholder.
+  \end{lstlisting}
 
 
   % Algorithm
@@ -268,58 +239,11 @@ Press any key to continue...
   \section{Algorithm}
     Below is the algorithm for the program.
     \begin{algorithm}[H]
-      \caption{Chapter 7 Program Algorithm}
+      \caption{Chapter 8 Program Algorithm}
       \vspace{12pt}
       \begin{algorithmic}[1]
-        \Function{obscureData}{$inputData$}
-          \State $outputData\gets\ inputData$
-          \State $position\gets\ 0$
-          \State
-          \While{$true$}
-            \State $firstSpace\gets\ $\Call{findChar}{$\text{`` ''}$}
-              \Comment{First space in string should be before last name}
-            \State $position\gets\ $
-              \Call{findChar}{$\text{`` ''}$, $firstSpace+1$} $+1$
-              \Comment{After the second space is our SSN}
-            \State\State
-              $($\Call{replace}{$position, \text{xxx-xx-xxxx}$}$)*11$
-              \Comment{Replace the next 11 characters}
-            \State $position\pluseq 10$
-              \Comment{%
-                Advance position so we don`t replace the same substring again%
-              }
-            \State\Comment{Skip the next two spaces so we hit our password}
-            \State $position\gets $\Call{findChar}{$\text{`` ''}$, $position+1$}
-            \State $position\gets $\Call{findChar}{$\text{`` ''}$, $position+1$}
-            \State\State
-            \State $position\pluseq 1$\Comment{Replace the next char, not space}
-            \While{$position\ <\ $ \Call{lengthOf}{outputData}}
-              \Comment{Replace the characters from pos$\rightarrow$end}
-              \State
-                \Call{replace}{$position, \text{x}$}
-                \State $positon\pluseq 1$
-              \State
-              \If{$position =\ $\Call{lengthOf}{outputData}}
-                \State\Call{exitLoop}{}
-              \EndIf
-            \EndWhile
-          \EndWhile
-          \State\State
-          \Return $outputData$
-            \Comment{Return our modified string}
-        \EndFunction
-        \State
         \Procedure{main}{}
-          \State $studentData\gets\ \text{``\textbackslash0x''}$
-          \State\State
-            \Call{toOutput}{``Enter a student's name, social security number,
-              user id, and password in one line:''}
-          \State\State
-            \Call{setFromIO}{$stdin$,$studentData$}
-          \State
-          \State $outData\gets\ $\Call{obscureData}{$studentData$}
-          \State\State
-            \Call{toOutput}{$outData$}
+          \State $x\gets 0$
         \EndProcedure
       \end{algorithmic}
       \label{alg}
@@ -345,7 +269,7 @@ Press any key to continue...
             \textbf{with a terminal emulator or command prompt}, this will
             (most likely) mean running:
             \begin{lstlisting}[language=bash]
-cd ~/Downloads/ashellwig_m4c7_programming_assignment
+cd ~/Downloads/ashellwig_m4c8_programming_assignment
             \end{lstlisting}
           \item Compile the program and documentation\footnote{\textbf{Note%
             }: This requires the whole \texttt{texlive} suite as well as
@@ -353,11 +277,11 @@ cd ~/Downloads/ashellwig_m4c7_programming_assignment
             switching to the source directory:
             \begin{lstlisting}[%
               language=bash,%
-              caption={Chapter 7 Program Build Commands},%
+              caption={Chapter 8 Program Build Commands},%
             ]
 make debug
 
-./out/bin/ashellwig_m4c7_programming_assignment.bin # Run program
+./out/bin/ashellwig_m4c8_programming_assignment.bin # Run program
 
 make clean-all # Removes object files, binaries, and docs
             \end{lstlisting}
@@ -368,27 +292,27 @@ make clean-all # Removes object files, binaries, and docs
             \textbf{with a terminal emulator or command prompt}, this will
             (most likely) mean running:
             \begin{lstlisting}[language=bash]
-cd ~/Downloads/ashellwig_m4c7_programming_assignment/out/bin
+cd ~/Downloads/ashellwig_m4c8_programming_assignment/out/bin
             \end{lstlisting}
           \item To run the program simply issue this within the command
             prompt
             \begin{lstlisting}[language=bash]
-./build/ashellwig_m4c7_programming_assignment
+./build/ashellwig_m4c8_programming_assignment
             \end{lstlisting}
         \end{enumerate}
         Of course if preferred, you may also navigate to the build folder in
           file explorer and double click the executable
-          (\texttt{./ashellwig\_m4c7\_programming\_assignment}).
+          (\texttt{./ashellwig\_m4c8\_programming\_assignment}).
 
 
   % Bibliography
   \newpage
   \nocite{*}
-  \printbibliography[%
-    heading=bibintoc,%
-    title={Works Cited},%
-    notcategory={consulted}%
-  ]{}
+  % \printbibliography[%
+  %   heading=bibintoc,%
+  %   title={Works Cited},%
+  %   notcategory={consulted}%
+  % ]{}
   \printbibliography[%
     heading=bibintoc,%
     title={Works Consulted},%
@@ -404,14 +328,14 @@ cd ~/Downloads/ashellwig_m4c7_programming_assignment/out/bin
       \includegraphics[%
         width={\textwidth}%
       ]{compile.png}
-      \caption{Compiling Chapter 7`s Program}
+      \caption{Compiling Chapter 8`s Program}
       \label{img:compilation}
     \end{figure}
     \begin{figure}[H]
       \includegraphics[%
         width=\textwidth%
       ]{run.png}
-      \caption{Running Chapter 7`s Program}
+      \caption{Running Chapter 8`s Program}
       \label{img:running}
     \end{figure}
 
@@ -434,55 +358,6 @@ cd ~/Downloads/ashellwig_m4c7_programming_assignment/out/bin
 
       \begin{lstlisting}[language=c++,caption={TestCase.cxx}]
 #include "../include/catch2/catch.hpp"
-#include "./include/test_helpers.hh"
-#include <sstream>
-#include <string>
-
-SCENARIO("The obscure function is successful", "[functions]") {
-  GIVEN("The desired output's input string") {
-    WHEN("We attempt to obscure a string") {
-      std::string inputData = "Jane Smith 222-33-4444 S12345 password";
-      std::string targetString = "Jane Smith xxx-xx-xxxx S12345 xxxxxxxx";
-
-      THEN("The information should be obscured") {
-        REQUIRE(obscureData(inputData) == targetString);
-      }
-    }
-    WHEN("We attempt to obscure a string") {
-      std::string inputData = "Ashton Hellwig 111-11-1111 S02075840 password";
-      std::string targetString =
-          "Ashton Hellwig xxx-xx-xxxx S02075840 xxxxxxxx";
-
-      THEN("The information should be obscured") {
-        REQUIRE(obscureData(inputData) == targetString);
-      }
-    }
-  }
-}
       \end{lstlisting}
-
-    \newpage
-    \section{String Functions}\label{app:stringfuncs}
-      The following functions should be used rather than the [] operator
-        to access string elements, taken from \S~7-3a Table 7-1
-        \parencite[\S~7-3a]{textbook}.
-
-      \begin{figure}[H]
-        \centering
-        \caption{Textbook Table 7-1}
-        \includegraphics[width=\textwidth]{stringfuncs.png}
-      \end{figure}
-      \newpage
-      \begin{figure}[H]
-        \centering
-        \caption{Textbook Table 7-1 (Pt 2)}
-        \includegraphics[width=\textwidth]{stringfuncs2.png}
-      \end{figure}
-      \newpage
-      \begin{figure}[H]
-        \centering
-        \caption{Textbook Table 7-1 (Pt 2)}
-        \includegraphics[width=\textwidth]{stringfuncs3.png}
-      \end{figure}
 \end{document}
 

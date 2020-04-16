@@ -8,7 +8,7 @@
             "name": "g++-9",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/ahellwig/Documents/School/CSC160/Module-4/Programming-Assignments/ashellwig_m4c7_programming_assignment/out/bin/ashellwig_m4c7_programming_assignment.bin",
+            "program": "/home/ahellwig/Documents/School/CSC160/Module-4/Programming-Assignments/ashellwig_m4c8_programming_assignment/out/bin/ashellwig_m4c8_programming_assignment.bin",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
