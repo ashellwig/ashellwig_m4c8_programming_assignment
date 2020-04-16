@@ -213,13 +213,32 @@
       \textbf{Instructions}\vspace{-8pt}
       \begin{enumerate}
         \item Review the general programming assignment instructions.
-        \item Placeholder.
+        \item Write a program that:
+          \begin{enumerate}[label=\Alph*.]
+            \item Allows the user to enter the last names of five candidates in
+              a local election and the number of votes received by each candidate.
+            \item The program should then output each candidate’s name, the
+              number of votes received, and the percentage of the total votes
+              received by the candidate.
+            \item Your program should also output the winner of the election.
+            \item This program must be done using parallel arrays to store the
+              name and number of votes for each candidate.
+            \item The number must be formatted appropriately as shown in the
+              sample output below.
+          \end{enumerate}
       \end{enumerate}
     \end{mdframed}
 
     \subsection{Data}
       \begin{itemize}
-        \item Placeholder.
+        \item We need two parallel arrays which should match index$\rightarrow$%
+          index.
+          \begin{itemize}
+            \item |std::string candidateLastName[];| to store the candidate's
+              name.
+            \item |int candidateVotes[];| to store the number of votes received
+              by the candidate.
+          \end{itemize}
       \end{itemize}
 
     \subsection{Desired Output}
@@ -230,7 +249,21 @@
           (stdout)},%
         label={desiredoutput:stdout}%
     ]
-Placeholder.
+Enter candidates name and the votes received by the candidate.
+Smith 12345
+Jones 4567
+Adams 555
+Washington 888888
+Jefferson 456789
+Candidate    Votes Received    % of Total Votes
+Smith           12345               0.91
+Jones            4567               0.34
+Adams             555               0.04
+Washington     888888              65.21
+Jefferson      456789              33.51
+Total            1363144
+The Winner of the Election is Washington
+Press any key to continue...
   \end{lstlisting}
 
 
