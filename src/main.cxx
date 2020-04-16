@@ -15,12 +15,14 @@
 #include "../include/chapter8.hh"          // TBD
 #include "../include/general_functions.hh" // pauseprompt
 #include <iostream>                        // std::cout
-
+#include <string>
 /**
  * @brief Performs the steps to execute the main application.
  */
 int main() {
-  std::cout << "Hello, world!" << std::endl;
+  chapter8::Candidate candidates;
+
+  candidates.printCandidates();
 
   // "Press enter to continue..."
   general_functions::pauseprompt();

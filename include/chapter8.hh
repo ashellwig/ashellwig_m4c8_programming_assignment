@@ -13,7 +13,7 @@
  * Date: 16 April 2020.
  */
 
-
+#include <string>
 
 #ifndef CHAPTER8_HH_INCLUDED
 #  define CHAPTER8_HH_INCLUDED
@@ -34,7 +34,16 @@ namespace chapter8 {
 #    include "ashwig_debug.hh"
 #  endif // DEBUG
 
-/* SOLUTION PROTOTYPES GO HERE */
+class Candidate {
+public:
+  Candidate() { setCandidateData(m_candidateNames, m_candidateVotes); }
+  void setCandidateData(std::string[], int[]);
+  void printCandidates();
+
+private:
+  std::string m_candidateNames[150];
+  int m_candidateVotes[150];
+}; // class Candidate
 
 #endif // !CHAPTER8_HH_INCLUDED
 } // namespace chapter8
