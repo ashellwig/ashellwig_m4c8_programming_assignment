@@ -13,16 +13,32 @@
  */
 
 #include "../include/chapter8.hh"          // TBD
+#include "../include/cxxopts/cxxopts.hpp"  // cxxopts::Options
 #include "../include/general_functions.hh" // pauseprompt
 #include <iostream>                        // std::cout
-#include <string>
+
 /**
  * @brief Performs the steps to execute the main application.
  */
-int main() {
-  chapter8::Candidate candidates;
+int main(int argc, char **argv) {
+  // Command Line Options
+  cxxopts::Options options("ashellwig_m4c8_programming_assignment",
+                           "Programming assignment solution for CSC 160 C++ "
+                           "Course at CCCOnline in SP 2020");
+  options.add_options()("n,number-of-candidates", "Param numberOfCandidates",
+                        cxxopts::value<int>()->default_value("6"))(
+      "h,help", "Print usage");
 
-  candidates.printCandidates();
+  auto result = options.parse(argc, argv);
+
+  if (result.count("help")) {
+    std::cout << options.help() << std::endl;
+    exit(0);
+  }
+
+  // Generate our candidate data
+  chapter8::Candidate candidateList;
+  candidateList.printResult();
 
   // "Press enter to continue..."
   general_functions::pauseprompt();

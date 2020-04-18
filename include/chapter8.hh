@@ -36,13 +36,17 @@ namespace chapter8 {
 
 class Candidate {
 public:
-  Candidate() { setCandidateData(m_candidateNames, m_candidateVotes); }
-  void setCandidateData(std::string[], int[]);
-  void printCandidates();
+  Candidate();
+  void setNumberOfCandidates(int);
+  int getNumberOfCandidates() const;
+  void getUserInput(std::string[], int[]);
+  void printResult() const;
+  static const int m_numberOfCandidates = 6;
 
 private:
-  std::string m_candidateNames[150];
-  int m_candidateVotes[150];
+  std::string m_names[m_numberOfCandidates] = {
+      "Candidate0", "Candidate1", "Candidate2", "Candidate3", "Candidate4"};
+  int m_votes[m_numberOfCandidates] = {0, 1, 2, 3, 4, 5};
 }; // class Candidate
 
 #endif // !CHAPTER8_HH_INCLUDED

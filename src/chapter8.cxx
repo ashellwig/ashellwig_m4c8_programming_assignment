@@ -14,28 +14,44 @@
  */
 
 #include "../include/chapter8.hh"
+#include <iomanip>  //std::setw, std::setprecision
 #include <iostream> // std::cin, std::cout
 #include <string>   // std::string
 
-void chapter8::Candidate::setCandidateData(std::string names[], int votes[]) {
-  int numberOfCandidates = 0;
+chapter8::Candidate::Candidate() { getUserInput(m_names, m_votes); }
 
-  std::cout << "Enter candidate's name and the votes received by the candidate."
-            << std::endl;
+int chapter8::Candidate::getNumberOfCandidates() const {
+  return m_numberOfCandidates;
+}
 
-  while (std::cin && numberOfCandidates < 150) {
-    numberOfCandidates++;
-    std::cin >> names[numberOfCandidates] >> votes[numberOfCandidates];
+void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
+  // Prompt User
+  std::cout
+      << "Enter candidate's last name and the votes received by the candidate."
+      << std::endl;
+  std::cin >> names[this->m_numberOfCandidates] >>
+      votes[this->m_numberOfCandidates];
+
+  // Initialize our array
+  int count = 0;
+  while (std::cin && count < m_numberOfCandidates) {
+    count++;
+    std::cin >> names[count] >> votes[count];
   }
 }
 
-void chapter8::Candidate::printCandidates() {
-  std::cout << "Names:" << std::endl;
-  for (char &n : *m_candidateNames) {
-    std::cout << n;
+void chapter8::Candidate::printResult() const {
+  std::cout << std::setprecision(2) << std::setw(5) << std::fixed;
+  std::cout << "Candidate"
+            << "Votes Received"
+            << "\% of Total Votes";
+
+  for (int i = 0; i < m_numberOfCandidates; i++) {
+    std::cout << m_names[i] << " " << m_votes[i] << " "
+              << "0\%" << '\n';
   }
-  std::cout << "Votes:" << std::endl;
-  for (int &n : m_candidateVotes) {
-    std::cout << n;
-  }
+
+  std::cout << "Total"
+            << " " << 0 << std::endl;
+  std::cout << "The winner of the election is " << m_names[2] << std::endl;
 }
