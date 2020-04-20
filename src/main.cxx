@@ -20,7 +20,7 @@
 /**
  * @brief Performs the steps to execute the main application.
  */
-int main(int argc, char **argv) {
+int main() {
 
   // Generate our candidate data
   chapter8::Candidate candidateList;

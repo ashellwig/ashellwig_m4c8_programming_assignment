@@ -22,8 +22,6 @@
 
 namespace chapter8 {
 
-namespace chapter8::exceptions {} // namespace chapter8::exceptions
-
 #  ifndef DEBUG
 #    define DEBUG 0
 #    ifdef NDEBUG
@@ -44,18 +42,20 @@ namespace chapter8::exceptions {} // namespace chapter8::exceptions
 
 class Candidate {
 public:
+  static const int m_numberOfCandidates = 5;
+
   Candidate();
-  void setNumberOfCandidates(int);
-  int getNumberOfCandidates() const;
+
+  void setTotalVotes(int[]);
+  int calculatePercentOfVotes();
   void getUserInput(std::string[], int[]);
   void printResult() const;
-  static const int m_numberOfCandidates = 6;
 
 private:
-  std::string m_names[m_numberOfCandidates] = {
-      "Candidate0", "Candidate1", "Candidate2", "Candidate3", "Candidate4"};
-  int m_votes[m_numberOfCandidates] = {0, 1, 2, 3, 4, 5};
+  std::string m_names[m_numberOfCandidates];
+  int m_votes[m_numberOfCandidates];
+  int m_totalVotes;
 }; // class Candidate
-
-#endif // !CHAPTER8_HH_INCLUDED
+// Pop Warning Configuration
 } // namespace chapter8
+#endif // !CHAPTER8_HH_INCLUDED

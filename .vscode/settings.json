@@ -31,9 +31,9 @@
   /// If using g++
   "C_Cpp.default.compilerArgs": [
     "-xc++",
-    "-std=gnu++2a", // Change this to -std=gnu++20 if gcc (g++)
+    "-Wall",
+    "-std=c++2a", // Change this to -std=gnu++20 if gcc (g++)
     "-DDEBUG",
-    "",
     "-Iinclude",
     "-Itest/include",
     "-isystem include/catch2",

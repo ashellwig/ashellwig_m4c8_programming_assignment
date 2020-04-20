@@ -1,5 +1,5 @@
 /**
- * @file debug.hh
+ * @file ashwig_exceptions.hh
  * @author Ashton Scott Hellwig (ahellwig@student.cccs.edu)
  * @brief This file contains the definitions of exceptions classes to be used
  * in the programming assignments for FRCC's CSC160 at CCCOnline.
@@ -21,7 +21,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpragmas"
 #pragma GCC diagnostic ignored "-Wc++17-extensions"
-namespace chapter8::ashwig_exceptions {
+inline namespace ashwig_exceptions {
 /**
  * @brief Provides exception types for additional debugging information.
  */
@@ -41,7 +41,7 @@ public:
   }
 };
 } // namespace exceptions
-} // namespace chapter8::ashwig_exceptions
+} // namespace ashwig_exceptions
 #pragma GCC diagnostic pop
 
 #endif // !ASHWIG_EXCEPTIONS_HH
