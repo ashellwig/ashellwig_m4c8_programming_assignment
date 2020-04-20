@@ -20,17 +20,14 @@
 
 chapter8::Candidate::Candidate() {
   getUserInput(m_names, m_votes);
-  setTotalVotes(m_votes);
-}
-
-void chapter8::Candidate::setTotalVotes(int votes[]) {
-  int sum = 0;
 
   for (int iter = 0; iter < m_numberOfCandidates; iter++) {
-    sum += votes[iter];
+    m_totalVotes += m_votes[iter];
   }
 
-  m_totalVotes = sum;
+  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
+    m_percentOfVotes[iter] = m_votes[iter] / static_cast<double>(m_totalVotes);
+  }
 }
 
 void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
@@ -39,27 +36,28 @@ void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
       << "Enter candidate's last name and the votes received by the candidate."
       << std::endl;
 
-  // Initialize our array
+  // Initialize our arrays
   for (int iter = 0; iter < m_numberOfCandidates; iter++) {
     std::cin >> names[iter] >> votes[iter];
   }
 }
 
+/**
+ * @brief Generates the desired output for the Chapter 8 Programming Assignment.
+ */
 void chapter8::Candidate::printResult() const {
   std::cout << std::setprecision(3) << std::fixed;
-  std::cout << "Candidate"
-            << " "
-            << "Votes Received"
-            << " "
+  std::cout << "Candidate" << std::setw(3) << " "
+            << "Votes Received" << std::setw(3) << " "
             << "\% of Total Votes" << std::endl;
 
   for (int name = 0; name < m_numberOfCandidates; name++) {
     for (int votes = 0; votes < m_numberOfCandidates; votes++) {
-      double percentOfVotes = m_votes[votes] / m_totalVotes;
-
-      std::cout << std::fixed << std::setprecision(2) << std::setw(3);
-      std::cout << m_names[name] << " " << m_votes[votes] << " "
-                << percentOfVotes << "%" << '\n';
+      for (int percents = 0; percents < m_numberOfCandidates; percents++) {
+        std::cout << std::fixed << std::setprecision(2);
+        std::cout << m_names[name] << std::setw(12) << " " << m_votes[votes]
+                  << std::setw(20) << " " << m_percentOfVotes[percents] << '\n';
+      }
     }
   }
 

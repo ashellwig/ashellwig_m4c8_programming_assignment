@@ -54,6 +54,7 @@ public:
 private:
   std::string m_names[m_numberOfCandidates];
   int m_votes[m_numberOfCandidates];
+  double m_percentOfVotes[m_numberOfCandidates];
   int m_totalVotes;
 }; // class Candidate
 // Pop Warning Configuration
