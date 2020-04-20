@@ -27,14 +27,31 @@
   "clang-format.language.cpp.enable": true,
   "C_Cpp.default.cppStandard": "c++20",
   "C_Cpp.default.compilerPath": "/usr/bin/g++",
+  // Compiler Options
+  /// If using g++
   "C_Cpp.default.compilerArgs": [
-    "-std=gnu++2a",
+    "-xc++",
+    "-std=gnu++2a", // Change this to -std=gnu++20 if gcc (g++)
+    "-DDEBUG",
+    "",
     "-Iinclude",
     "-Itest/include",
     "-isystem include/catch2",
     "-isystem include/cxxopts",
     "-isystem include/fakeit"
   ],
+  // If using gcc
+  // "C_Cpp.default.compilerArgs": [
+  //   "-xc++",
+  //   "-lstdc++",
+  //   "-shared-libgcc",
+  //   "-std=gnu++2a", // Change this to -std=gnu++20 if gcc (g++)
+  //   "-Iinclude",
+  //   "-Itest/include",
+  //   "-isystem include/catch2",
+  //   "-isystem include/cxxopts",
+  //   "-isystem include/fakeit"
+  // ],
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
   "doxdocgen.generic.returnTemplate": "@return {type} ",

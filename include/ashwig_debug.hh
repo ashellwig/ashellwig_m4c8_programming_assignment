@@ -14,19 +14,21 @@
  * Programming (C++) Date: 02 April 2020
  */
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpragmas"
-#pragma GCC diagnostic ignored "-Wc++17-extensions"
 namespace ashwig_debug {
 /**
  * @brief Prints the output of a function call when it is sent to stderr rather
  * than stdout. Use for debugging assistance.
  */
-#define verbose_print(...)                                                     \
+#define verbose_print(fp, ...)                                                 \
   char message[150];                                                           \
   std::sprintf(message, __VA_ARGS__);                                          \
   std::cerr << "[" << __FILE__ << "]: "                                        \
             << "[" << __PRETTY_FUNCTION__ << "]: "                             \
             << "[line:" << __LINE__ << "] >> " << message << std::endl;
+
+/**
+ * @brief Writes given arguments to std::cerr if using the -DDEBUG build flag.
+ */
+#define ashwig_dprintf(message, ...) std::cerr <<
+
 } // namespace ashwig_debug
-#pragma GCC diagnostic pop

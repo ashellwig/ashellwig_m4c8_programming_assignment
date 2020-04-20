@@ -15,12 +15,15 @@
 
 #include <string>
 
-#ifndef CHAPTER8_HH_INCLUDED
-#  define CHAPTER8_HH_INCLUDED
+#ifndef _CHAPTER8_HH_INCLUDED
+#  define _CHAPTER8_HH_INCLUDED
 
 #  include "ashwig_exceptions.hh"
 
 namespace chapter8 {
+
+namespace chapter8::exceptions {} // namespace chapter8::exceptions
+
 #  ifndef DEBUG
 #    define DEBUG 0
 #    ifdef NDEBUG
@@ -28,7 +31,12 @@ namespace chapter8 {
 #    endif // !NDEBUG
 #  else
 #    define DEBUG 1
-#  endif // !DEBUG
+#    ifndef COMMAND_LINE
+#      define COMMAND_LINE 1
+#    else
+#      define COMMAND_LINE 0
+#    endif // !COMMAND_LINE
+#  endif   // !DEBUG
 
 #  if (DEBUG == 1)
 #    include "ashwig_debug.hh"
