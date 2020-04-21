@@ -13,7 +13,6 @@
  */
 
 #include "../include/chapter8.hh"          // TBD
-#include "../include/cxxopts/cxxopts.hpp"  // cxxopts::Options
 #include "../include/general_functions.hh" // pauseprompt
 #include <iostream>                        // std::cout
 

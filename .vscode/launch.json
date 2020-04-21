@@ -5,16 +5,22 @@
     "version": "2.0.0",
     "configurations": [
         {
-            "name": "g++-9",
+            "name": "Build and debug project",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/ahellwig/Documents/School/CSC160/Module-4/Programming-Assignments/ashellwig_m4c8_programming_assignment/out/bin/ashellwig_m4c8_programming_assignment.bin",
-            "args": [],
+            "program": "${workspaceFolder}/out/bin/ashellwig_m4c8_programming_assignment.bin",
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
             "miDebuggerPath": "/usr/bin/gdb",
             "preLaunchTask": "makedebug"
         }

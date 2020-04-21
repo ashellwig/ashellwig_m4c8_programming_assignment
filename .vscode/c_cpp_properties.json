@@ -13,13 +13,13 @@
         "${workspaceRoot}",
         "${workspaceRoot}/include",
         "${workspaceRoot}/include/catch2",
-        "${workspaceRoot}/include/cxxopts",
         "${workspaceRoot}/include/fakeit"
       ],
       "defines": [
         "DEBUG=1"
       ],
       "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/g++",
       "browse": {
         "path": [
           "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
@@ -32,12 +32,10 @@
           "${workspaceRoot}",
           "${workspaceRoot}/include",
           "${workspaceRoot}/include/catch2",
-          "${workspaceRoot}/include/cxxopts",
           "${workspaceRoot}/include/fakeit"
         ],
         "limitSymbolsToIncludedHeaders": true
       },
-      "compilerPath": "/usr/bin/g++",
       "compilerArgs": [
         "-std=gnu++2a",
         "-x",
@@ -45,7 +43,6 @@
         "-Iinclude",
         "-Itest/include",
         "-isystem include/catch2",
-        "-isystem include/cxxopts",
         "-isystem include/fakeit"
       ],
       "cStandard": "c11",
