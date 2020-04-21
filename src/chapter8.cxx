@@ -18,6 +18,9 @@
 #include <iostream> // std::cin, std::cout
 #include <string>   // std::string
 
+/**
+ * @brief Construct a new chapter8::Candidate::Candidate object
+ */
 chapter8::Candidate::Candidate() {
   // Prompt user for input to initialize our parallel arrays.
   getUserInput(m_names, m_votes);
@@ -35,6 +38,12 @@ chapter8::Candidate::Candidate() {
   }
 }
 
+/**
+ * @brief Construct a new chapter8::Candidate::Candidate object
+ *
+ * @param names The last names of the candidates in the election.
+ * @param votes The number of votes received by the candidate.
+ */
 chapter8::Candidate::Candidate(std::string names[], int votes[]) {
   // Initialize Arrays
   for (int iter = 0; iter < m_numberOfCandidates; iter++) {
@@ -54,6 +63,13 @@ chapter8::Candidate::Candidate(std::string names[], int votes[]) {
   }
 }
 
+/**
+ * @brief Sets the Candidate class's private member variables using input
+ * obtained via stdin.
+ *
+ * @param names The last names of the candidates in the election.
+ * @param votes The number of votes received by the candidate.
+ */
 void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
   // Prompt User
   std::cout
@@ -83,7 +99,7 @@ void chapter8::Candidate::printResult() const {
 
   // Loop which prints the election results based on our user's input.
   for (int i = 0; i < lcv; i++) {
-
+    //? I never really could get the formatting correct here... Sorry...
     std::cout << std::setprecision(2);
     std::cout << m_names[i] << std::setw(11) << ' ' << m_votes[i] << ' '
               << std::setw(22) << m_percentOfVotes[i] << '\n';
