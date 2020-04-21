@@ -45,30 +45,6 @@ void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
 /**
  * @brief Generates the desired output for the Chapter 8 Programming Assignment.
  */
-void chapter8::Candidate::_printResult() const {
-  std::cout << std::setprecision(3) << std::fixed;
-  std::cout << "Candidate" << std::setw(3) << " "
-            << "Votes Received" << std::setw(3) << " "
-            << "\% of Total Votes" << std::endl;
-
-  for (int name = 0; name < m_numberOfCandidates; name++) {
-    for (int votes = 0; votes < m_numberOfCandidates; votes++) {
-      for (int percents = 0; percents < m_numberOfCandidates; percents++) {
-        std::cout << std::fixed << std::setprecision(2);
-        std::cout << m_names[name] << std::setw(12) << " " << m_votes[votes]
-                  << std::setw(20) << " " << m_percentOfVotes[percents] << '\n';
-      }
-    }
-  }
-
-  std::cout << "Total"
-            << " " << m_totalVotes << std::endl;
-  std::cout << "The winner of the election is " << m_names[2] << std::endl;
-}
-
-/**
- * @brief Generates the desired output for the Chapter 8 Programming Assignment.
- */
 void chapter8::Candidate::printResult() const {
   // Set local variables.
   int mostVotes = 0; //*< The number of votes received by the winning candidate.
