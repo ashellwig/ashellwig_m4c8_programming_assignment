@@ -49,6 +49,7 @@ public:
   void setTotalVotes(int[]);
   int calculatePercentOfVotes();
   void getUserInput(std::string[], int[]);
+  void _printResult() const;
   void printResult() const;
 
 private:

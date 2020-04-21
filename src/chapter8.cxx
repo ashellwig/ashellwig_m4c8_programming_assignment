@@ -45,7 +45,7 @@ void chapter8::Candidate::getUserInput(std::string names[], int votes[]) {
 /**
  * @brief Generates the desired output for the Chapter 8 Programming Assignment.
  */
-void chapter8::Candidate::printResult() const {
+void chapter8::Candidate::_printResult() const {
   std::cout << std::setprecision(3) << std::fixed;
   std::cout << "Candidate" << std::setw(3) << " "
             << "Votes Received" << std::setw(3) << " "
@@ -64,4 +64,44 @@ void chapter8::Candidate::printResult() const {
   std::cout << "Total"
             << " " << m_totalVotes << std::endl;
   std::cout << "The winner of the election is " << m_names[2] << std::endl;
+}
+
+/**
+ * @brief Generates the desired output for the Chapter 8 Programming Assignment.
+ */
+void chapter8::Candidate::printResult() const {
+  // Set local variables.
+  int mostVotes = 0; //*< The number of votes received by the winning candidate.
+  int index = 0;     //*< Index of array.
+  int lcv = sizeof(m_votes) / sizeof(m_votes[0]); //*< Loop Control Variable.
+
+  // Output formatted header
+  std::cout << std::setprecision(3) << std::fixed;
+  std::cout << "Candidate" << std::setw(3) << " "
+            << "Votes Received" << std::setw(3) << " "
+            << "\% of Total Votes" << std::endl;
+
+  // Loop which prints the election results based on our user's input.
+  for (int i = 0; i < lcv; i++) {
+    std::cout << std::setprecision(2);
+    std::cout << m_names[i] << std::setw(12) << " " << m_votes[i]
+              << std::setw(20) << " " << m_percentOfVotes[i] << '\n';
+  }
+  std::cout << std::endl;
+
+  // Find our election winner.
+  for (int i = 0; i < lcv; i++) {
+    if (m_votes[i] > mostVotes) {
+      mostVotes = m_votes[i];
+      index = i;
+    }
+  }
+
+  // Output total number of votes received by ALL candidates.
+  std::cout << "Total"
+            << " " << m_totalVotes << std::endl;
+
+  // Output winner of election.
+  std::cout << "The winner of the election is " << m_names[index] << " with "
+            << m_votes[index] << " votes." << std::endl;
 }
