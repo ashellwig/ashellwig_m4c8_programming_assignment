@@ -1,26 +1,26 @@
 #include "../include/catch2/catch.hpp"
-#include "./include/test_helpers.hh"
-#include <sstream>
+#include "../include/chapter8.hh"
 #include <string>
 
-SCENARIO("The obscure function is successful", "[functions]") {
-  GIVEN("The desired output's input string") {
-    WHEN("We attempt to obscure a string") {
-      std::string inputData = "Jane Smith 222-33-4444 S12345 password";
-      std::string targetString = "Jane Smith xxx-xx-xxxx S12345 xxxxxxxx";
+using chapter8::Candidate;
 
-      THEN("The information should be obscured") {
-        REQUIRE(obscureData(inputData) == targetString);
-      }
-    }
+SCENARIO("We use arrays to store and calculate the desired values.",
+         "[class]") {
+  GIVEN("The input ") {
+    WHEN("We initialize our class") {
+      std::string names[5]; //*< Last names of our candidates.
+      int votes[5];         //*< Number of votes received by each candidate.
 
-    WHEN("We attempt to obscure a string") {
-      std::string inputData = "Ashton Hellwig 111-11-1111 S02075840 password";
-      std::string targetString =
-          "Ashton Hellwig xxx-xx-xxxx S02075840 xxxxxxxx";
+      Candidate candidates(names,
+                           votes); //*< Object which calculates and stores our
+                                   //*< candidate's information.
 
-      THEN("The information should be obscured") {
-        REQUIRE(obscureData(inputData) == targetString);
+      THEN("No value should be empty") {
+        for (int i = 0; i < 5; i++) {
+          REQUIRE(names[i] != "");
+          REQUIRE(votes[i] != 0);
+          REQUIRE(candidates.m_numberOfCandidates == 5);
+        }
       }
     }
   }

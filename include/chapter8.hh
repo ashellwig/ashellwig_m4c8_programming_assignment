@@ -45,6 +45,7 @@ public:
   static const int m_numberOfCandidates = 5;
 
   Candidate();
+  Candidate(std::string[], int[]); // For testing
 
   void setTotalVotes(int[]);
   int calculatePercentOfVotes();

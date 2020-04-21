@@ -19,12 +19,35 @@
 #include <string>   // std::string
 
 chapter8::Candidate::Candidate() {
+  // Prompt user for input to initialize our parallel arrays.
   getUserInput(m_names, m_votes);
 
+  // Calculate number of total votes (sum of votes for all candidates).
   for (int iter = 0; iter < m_numberOfCandidates; iter++) {
     m_totalVotes += m_votes[iter];
   }
 
+  // Calculate the percentage of total votes received by each candidate and
+  // store the value in a separate array.
+  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
+    m_percentOfVotes[iter] = m_votes[iter] / static_cast<double>(m_totalVotes);
+  }
+}
+
+chapter8::Candidate::Candidate(std::string names[], int votes[]) {
+  // Initialize Arrays
+  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
+    m_names[iter] = names[iter];
+    m_votes[iter] = votes[iter];
+  }
+
+  // Calculate number of total votes (sum of votes for all candidates).
+  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
+    m_totalVotes += m_votes[iter];
+  }
+
+  // Calculate the percentage of total votes received by each candidate and
+  // store the value in a separate array.
   for (int iter = 0; iter < m_numberOfCandidates; iter++) {
     m_percentOfVotes[iter] = m_votes[iter] / static_cast<double>(m_totalVotes);
   }
@@ -53,15 +76,15 @@ void chapter8::Candidate::printResult() const {
 
   // Output formatted header
   std::cout << std::setprecision(3) << std::fixed;
-  std::cout << "Candidate" << std::setw(3) << " "
-            << "Votes Received" << std::setw(3) << " "
+  std::cout << "Candidate" << std::setw(4) << " "
+            << "Votes Received" << std::setw(4) << " "
             << "\% of Total Votes" << std::endl;
 
   // Loop which prints the election results based on our user's input.
   for (int i = 0; i < lcv; i++) {
     std::cout << std::setprecision(2);
-    std::cout << m_names[i] << std::setw(12) << " " << m_votes[i]
-              << std::setw(20) << " " << m_percentOfVotes[i] << '\n';
+    std::cout << m_names[i] << " " << std::setw(15) << m_votes[i] << " "
+              << std::setw(14) << m_percentOfVotes[i] << '\n';
   }
   std::cout << std::endl;
 
@@ -78,6 +101,6 @@ void chapter8::Candidate::printResult() const {
             << " " << m_totalVotes << std::endl;
 
   // Output winner of election.
-  std::cout << "The winner of the election is " << m_names[index] << " with "
-            << m_votes[index] << " votes." << std::endl;
+  std::cout << "The winner of the election is " << m_names[index] << "."
+            << std::endl;
 }
