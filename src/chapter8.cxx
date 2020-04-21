@@ -85,8 +85,8 @@ void chapter8::Candidate::printResult() const {
   for (int i = 0; i < lcv; i++) {
 
     std::cout << std::setprecision(2);
-    std::cout << m_names[i] << std::setw(15) << ' ' << m_votes[i] << ' '
-              << std::setw(20) << m_percentOfVotes[i] << '\n';
+    std::cout << m_names[i] << std::setw(11) << ' ' << m_votes[i] << ' '
+              << std::setw(22) << m_percentOfVotes[i] << '\n';
   }
 
   // Find our election winner.
