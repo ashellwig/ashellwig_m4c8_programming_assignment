@@ -29,6 +29,15 @@
   "C_Cpp.default.compilerPath": "/usr/bin/g++",
   // Compiler Options
   /// If using g++
+  "C_Cpp.default.systemIncludePath": [
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu",
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward",
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include",
+    "/usr/local/include",
+    "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
+    "/usr/include"
+  ],
   "C_Cpp.default.compilerArgs": [
     "-xc++",
     "-Wall",

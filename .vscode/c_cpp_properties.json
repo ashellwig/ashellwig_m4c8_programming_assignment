@@ -3,13 +3,6 @@
     {
       "name": "Linux",
       "includePath": [
-        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
-        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu",
-        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward",
-        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include",
-        "/usr/local/include",
-        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
-        "/usr/include",
         "${workspaceRoot}",
         "${workspaceRoot}/include",
         "${workspaceRoot}/include/catch2",
@@ -21,6 +14,7 @@
       "intelliSenseMode": "gcc-x64",
       "compilerPath": "/usr/bin/g++",
       "browse": {
+        "databaseFilename": "${default}",
         "path": [
           "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
           "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu",
@@ -29,21 +23,14 @@
           "/usr/local/include",
           "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
           "/usr/include",
-          "${workspaceRoot}",
-          "${workspaceRoot}/include",
-          "${workspaceRoot}/include/catch2",
-          "${workspaceRoot}/include/fakeit"
+          "${workspaceRoot}"
         ],
         "limitSymbolsToIncludedHeaders": true
       },
       "compilerArgs": [
         "-std=gnu++2a",
         "-x",
-        "c++",
-        "-Iinclude",
-        "-Itest/include",
-        "-isystem include/catch2",
-        "-isystem include/fakeit"
+        "c++"
       ],
       "cStandard": "c11",
       "cppStandard": "c++20"
