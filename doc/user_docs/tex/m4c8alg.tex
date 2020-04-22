@@ -13,19 +13,47 @@
     \begin{algorithmic}[1]
       \Function{calculateMostVotes}{$names$, $votes$}
         \State $numCandidates\gets 5$
+        \State $mostVotes\gets 0$
         \State $mostVotesIndex\gets 0$
         \State
-        \For{$i = 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
-          \State 
+        \For{$i\gets 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
+          \If{$votes[i] > mostVotes$}
+            \State $mostVotes\gets votes[i]$
+            \State $mostVotesIndex\gets i$
+          \EndIf
         \EndFor
-        \State\State\Return{mostVotesIndex}
+        \State\State\Return{$mostVotesIndex$}
       \EndFunction
-      \Function{printResult}{$names$, $votes$}
+      \State
+      \Function{printResult}{$names$, $votes$, $percentages$}
+        \State $winner\gets$\Call{calculateMostVotes}{names, votes}
+        \State \Call{toOutput}{$tableHeader$}
+        \State
+        \For{$i\gets 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
+          \State \Call{toOutput}{$names[i]$, $votes[i]$, $percentages[i]$}
+        \EndFor
+        \State
+        \State \Call{toOutput}{``Total '', $totalVotes$}
+        \State \Call{toOutput}{``The winner of the election is: '', $winner$}
       \EndFunction
+      \State
       \Procedure{main}{}
         \State\Call{getInput}{$names$, $votes$}
-        \State\Call{printResult}{$names$, $votes$}
+        \State
+        \For{$i\gets 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
+          \State $totalVotes\pluseq i$
+        \EndFor
+        \State
+        \For{$i\gets 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
+          \State $percentages[i]\gets 100*(votes[i]/totalVotes)$
+        \EndFor
+        \State
+        \State\Call{printResult}{$names$, $votes$,$percentages$}
       \EndProcedure
     \end{algorithmic}
     \label{alg}
   \end{algorithm}
+
+% \For{$i\gets 0$, $i < numCandidates$, \Call{increment}{$i$, $1$}}
+  % \State 
+% \EndFor
