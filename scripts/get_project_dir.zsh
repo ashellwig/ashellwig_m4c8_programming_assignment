@@ -8,7 +8,6 @@ declare -L get_project_dir_path
 get_project_dir_path="\
     $(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
-
 unset get_project_dir_path
 unset errexit
 unset pipefail
