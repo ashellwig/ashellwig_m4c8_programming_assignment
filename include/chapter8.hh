@@ -44,15 +44,19 @@ class Candidate {
 public:
   static const int m_numberOfCandidates = 5;
 
-  Candidate();
-  Candidate(std::string[], int[]); // For testing
+  Candidate();            //*< Construct class with user input via std::cin.
+  Candidate(std::string); //*< Construct class with one string(for testing).
+  Candidate(std::string[],
+            int[]); //*< Construct class with two arrays (for testing).
 
   void setTotalVotes(int[]);
+  int getTotalVotes() const;
+  int getWinnerIndex() const;
   int calculatePercentOfVotes();
   void getUserInput(std::string[], int[]);
   void printResult() const;
 
-private:
+protected:
   std::string m_names[m_numberOfCandidates];
   int m_votes[m_numberOfCandidates];
   double m_percentOfVotes[m_numberOfCandidates];
