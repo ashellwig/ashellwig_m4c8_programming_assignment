@@ -152,8 +152,8 @@ void chapter8::Candidate::printResult() const {
   // Loop which prints the election results based on our user's input.
   for (int i = 0; i < lcv; i++) {
     std::cout << std::fixed << std::setprecision(2) << std::left;
-    std::cout << std::setw(15) << m_names[i] << std::setw(15) << m_votes[i]
-              << std::setw(15) << m_percentOfVotes[i] << '\n';
+    std::cout << std::setw(16) << m_names[i] << std::setw(23) << m_votes[i]
+              << m_percentOfVotes[i] << '\n';
   }
 
   // Find our election winner.
