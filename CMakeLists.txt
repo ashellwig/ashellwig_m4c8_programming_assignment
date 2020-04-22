@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ashellwig_m4c8_programming_assignment LANGUAGE CXX VERSION 0.0.1)
+project(ashellwig_m4c8_programming_assignment LANGUAGES CXX VERSION 0.0.1)
 
 # -- Variables ---
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # --- Project Setup ---
 set(SRC_FILES
