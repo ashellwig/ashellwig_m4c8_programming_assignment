@@ -13,55 +13,50 @@
  * Date: 16 April 2020.
  */
 
+#ifndef _CHAPTER8_HH_INCLUDED
+#define _CHAPTER8_HH_INCLUDED
 #include <string>
 
-#ifndef _CHAPTER8_HH_INCLUDED
-#  define _CHAPTER8_HH_INCLUDED
+#ifndef NDEBUG
+#  define DEBUG 1
+#  include "ashwig_debug.hh"
+#else
+#  define DEBUG 0
+#endif
 
-#  include "ashwig_exceptions.hh"
+#include "ashwig_exceptions.hh"
 
 namespace chapter8 {
 
-#  ifndef DEBUG
-#    define DEBUG 0
-#    ifdef NDEBUG
-#      define DEBUG 0
-#    endif // !NDEBUG
-#  else
-#    define DEBUG 1
-#    ifndef COMMAND_LINE
-#      define COMMAND_LINE 1
-#    else
-#      define COMMAND_LINE 0
-#    endif // !COMMAND_LINE
-#  endif   // !DEBUG
-
-#  if (DEBUG == 1)
-#    include "ashwig_debug.hh"
-#  endif // DEBUG
-
 class Candidate {
 public:
-  static const int m_numberOfCandidates = 5;
+  // Static constants
+  static const int m_numberOfCandidates =
+      5; //*< Number of candidates in election.
 
-  Candidate();            //*< Construct class with user input via std::cin.
-  Candidate(std::string); //*< Construct class with one string(for testing).
-  Candidate(std::string[],
-            int[]); //*< Construct class with two arrays (for testing).
+  // Constructors
+  Candidate(); //*< Construct class with user input via std::cin.
+  explicit Candidate(
+      std::string); //*< Construct class with one string(for testing).
 
+  // Setters
   void setTotalVotes(int[]);
+  int calculatePercentOfVotes();
+  // Getters
   int getTotalVotes() const;
   int getWinnerIndex() const;
-  int calculatePercentOfVotes();
   void getUserInput(std::string[], int[]);
+  // Printers
   void printResult() const;
 
 protected:
-  std::string m_names[m_numberOfCandidates];
-  int m_votes[m_numberOfCandidates];
-  double m_percentOfVotes[m_numberOfCandidates];
-  int m_totalVotes;
+  std::string m_names[m_numberOfCandidates]; //*< Last names of candidates.
+  int m_votes[m_numberOfCandidates]; //*< Number of votes for each candidate.
+  double m_percentOfVotes[m_numberOfCandidates]; //*< Percentage of total votes
+                                                 //*< for each candidate.
+  int m_totalVotes; //*< Total votes across all candidates.
+  // clang-format disable
 }; // class Candidate
-// Pop Warning Configuration
+// clang-format enable
 } // namespace chapter8
 #endif // !CHAPTER8_HH_INCLUDED

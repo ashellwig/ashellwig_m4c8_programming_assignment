@@ -42,31 +42,6 @@ chapter8::Candidate::Candidate() {
 /**
  * @brief Construct a new chapter8::Candidate::Candidate object
  *
- * @param names The last names of the candidates in the election.
- * @param votes The number of votes received by the candidate.
- */
-chapter8::Candidate::Candidate(std::string names[], int votes[]) {
-  // Initialize Arrays
-  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
-    m_names[iter] = names[iter];
-    m_votes[iter] = votes[iter];
-  }
-
-  // Calculate number of total votes (sum of votes for all candidates).
-  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
-    m_totalVotes += m_votes[iter];
-  }
-
-  // Calculate the percentage of total votes received by each candidate and
-  // store the value in a separate array.
-  for (int iter = 0; iter < m_numberOfCandidates; iter++) {
-    m_percentOfVotes[iter] = m_votes[iter] / static_cast<double>(m_totalVotes);
-  }
-}
-
-/**
- * @brief Construct a new chapter8::Candidate::Candidate object
- *
  * @param inputString The last names and number of votes for each candidates in
  * one string.
  */
