@@ -72,6 +72,13 @@
     "gcc",
     "gnuld"
   ],
+  "cmake.installPrefix": "${workspaceFolder}/out/cmake",
+  "cmake.generator": "Unix Makefiles",
+  "cmake.saveBeforeBuild": true,
+  "cmake.preferredGenerators": [
+    "Unix Makefiles"
+  ],
+  "cmake.ctestPath": "/usr/bin/ctest",
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
   "doxdocgen.generic.returnTemplate": "@return {type} ",
@@ -83,6 +90,18 @@
   ],
   "doxdocgen.file.versionTag": "@version 0.1.0",
   "doxdocgen.generic.authorTag": "@author {author} <{email}>",
+  /* Shell Script */
+  "[shellscript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "shellcheck.enable": false,
+  "shellformat.path": "/home/ahellwig/go/bin/shfmt",
+  "shellformat.flag": "-i 2 -bn -ci -sr -kp -ln bash",
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "ignore"
+  ],
   /* Latex */
   "[latex]": {
     "editor.formatOnPaste": false,

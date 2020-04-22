@@ -45,9 +45,9 @@ doc/user_docs/main.*
 ## Build tool auxiliary files:
 *.fdb_latexmk
 *.synctex
-*.synctex(busy)
+*.synctex\(busy\)
 *.synctex.gz
-*.synctex.gz(busy)
+*.synctex.gz\(busy\)
 *.pdfsync
 
 ## Build tool directories for auxiliary files
@@ -92,25 +92,23 @@ acs-*.bib
 # feynmf/feynmp
 *.mf
 *.mp
-*.t[1-9]
-*.t[1-9][0-9]
 *.tfm
 
 #(r)(e)ledmac/(r)(e)ledpar
 *.end
 *.?end
-*.[1-9]
-*.[1-9][0-9]
-*.[1-9][0-9][0-9]
-*.[1-9]R
-*.[1-9][0-9]R
-*.[1-9][0-9][0-9]R
-*.eledsec[1-9]
-*.eledsec[1-9]R
-*.eledsec[1-9][0-9]
-*.eledsec[1-9][0-9]R
-*.eledsec[1-9][0-9][0-9]
-*.eledsec[1-9][0-9][0-9]R
+"*.[1-9]"
+"*.[1-9][0-9]"
+"*.[1-9][0-9][0-9]"
+"*.[1-9]R"
+"*.[1-9][0-9]R"
+"*.[1-9][0-9][0-9]R"
+"*.eledsec[1-9]"
+"*.eledsec[1-9]R"
+"*.eledsec[1-9][0-9]"
+"*.eledsec[1-9][0-9]R"
+"*.eledsec[1-9][0-9][0-9]"
+"*.eledsec[1-9][0-9][0-9]R"
 
 # glossaries
 *.acn
@@ -164,10 +162,10 @@ acs-*.bib
 *.maf
 *.mlf
 *.mlt
-*.mtc[0-9]*
-*.slf[0-9]*
-*.slt[0-9]*
-*.stc[0-9]*
+"*.mtc[0-9]*"
+"*.slf[0-9]*"
+"*.slt[0-9]*"
+"*.stc[0-9]*"
 
 # minted
 _minted*
@@ -267,7 +265,6 @@ TSWLatexianTemp*
 .*.swp
 
 # KBibTeX
-*~[0-9]*
 
 # TeXnicCenter
 *.tps
@@ -289,7 +286,6 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
-
 
 # CPP
 *.bc
@@ -335,6 +331,8 @@ TSWLatexianTemp*
 **/build/**
 **/out/**
 
+**/tmp/**
+
 *.gcda
 *.gcno
 
@@ -342,7 +340,6 @@ TSWLatexianTemp*
 !out/cmake/.gitkeep
 !out/doc/.gitkeep
 !out/doc/**/.gitkeep
-!out//.gitkeep
 
 # Automake
 **/autom4te.cache/**
