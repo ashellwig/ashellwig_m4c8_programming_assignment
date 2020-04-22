@@ -177,6 +177,7 @@
     "*.html": "html",
     "*.txt": "cmake",
     "*.in": "cpp",
+    "*.cmake.in": "cmake",
     "iostream": "cpp",
     "cctype": "cpp",
     "clocale": "cpp",
