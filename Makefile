@@ -1,4 +1,4 @@
-# vim: set ts=2 sw=2 ft=sh:
+# vim: set noet ts=4 sw=4 ft=Makefile:
 ## Module 4 Chapter 8 Program
 ## Ashton S. Hellwig
 ## Date: 14 April 2020
@@ -24,6 +24,7 @@ CXXFLAGS := \
 	-std=gnu++2a \
 	-Wall \
 	-Wextra \
+	-g \
 	-ggdb \
 	-DDEBUG=1
 LFLAGS := \
@@ -34,17 +35,22 @@ LFLAGS := \
 # --- Test Variables ---
 TEST_PROGRAM := out/bin/test
 TEST_SRC := test/catch_main.cxx src/chapter8.cxx
-TEST_INCLUDES := -isystem include/catch2 -Iinclude -Itest/include
+TEST_INCLUDES := -Iinclude -Itest/include -isystem include/catch2
 TEST_OBJS := $(addprefix out/obj/test/, $(notdir $(TEST_SRC:.cxx=.o)))
 TEST_OBJS += out/obj/test/chapter8.o
 TEST_CXXFLAGS := \
 	-std=c++11 \
+	-g \
 	-ggdb
-TEST_LFLAGS := -std=c++11
+TEST_LFLAGS := -std=c++17
 
 # -- Documentation Variables
 DOC_DOXYGEN_OUT := out/doc/doxygen
-DOC_DOXYGEN_SUBDIRS := out/doc/doxygen/html out/doc/doxygen/latex out/doc/doxygen/man out/doc/doxygen/rtf
+DOC_DOXYGEN_SUBDIRS := \
+	out/doc/doxygen/html \
+	out/doc/doxygen/latex \
+	out/doc/doxygen/man \
+	out/doc/doxygen/rtf
 
 # === Rules ===
 # --- Chains ---

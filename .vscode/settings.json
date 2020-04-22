@@ -41,26 +41,19 @@
   "C_Cpp.default.compilerArgs": [
     "-xc++",
     "-Wall",
-    "-std=c++2a", // Change this to -std=gnu++20 if gcc (g++)
+    "-std=gnu++2a", // Change this to -std=c++20 if llvm (clang++)
     "-DDEBUG",
     "-Iinclude",
     "-Itest/include",
-    "-isystem include/catch2",
-    "-isystem include/cxxopts",
-    "-isystem include/fakeit"
+    "-isystem include/catch2"
   ],
-  // If using gcc
-  // "C_Cpp.default.compilerArgs": [
-  //   "-xc++",
-  //   "-lstdc++",
-  //   "-shared-libgcc",
-  //   "-std=gnu++2a", // Change this to -std=gnu++20 if gcc (g++)
-  //   "-Iinclude",
-  //   "-Itest/include",
-  //   "-isystem include/catch2",
-  //   "-isystem include/cxxopts",
-  //   "-isystem include/fakeit"
-  // ],
+  "C_Cpp.clang_format_sortIncludes": true,
+  "cmakeFormat.exePath": "/usr/bin/cmake-format",
+  "cmake.cmakePath": "/usr/bin/cmake",
+  "cmakeFormat.args": [
+    "--config-file",
+    ".cmake-format.py"
+  ],
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
   "doxdocgen.generic.returnTemplate": "@return {type} ",
@@ -70,7 +63,7 @@
   "doxdocgen.file.copyrightTag": [
     "@copyright Copyright (c) {year}"
   ],
-  "doxdocgen.file.versionTag": "@version 0.1",
+  "doxdocgen.file.versionTag": "@version 0.1.0",
   "doxdocgen.generic.authorTag": "@author {author} <{email}>",
   /* Latex */
   "[latex]": {
@@ -145,6 +138,16 @@
     "date"
   ],
   "latex-workshop.bibtex-format.surround": "Curly braces",
+  // Python
+  "[python]": {
+    "editor.formatOnSave": true
+  },
+  "python.jediEnabled": false,
+  "python.linting.enabled": false,
+  "python.formatting.provider": "yapf",
+  "python.dataScience.enabled": false,
+  "python.workspaceSymbols.enabled": false,
+  "vsintellicode.python.completionsEnabled": false,
   /* General Tools */
   // Spell Checker
   "cSpell.logLevel": "None",

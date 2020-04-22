@@ -5,8 +5,7 @@
       "includePath": [
         "${workspaceRoot}",
         "${workspaceRoot}/include",
-        "${workspaceRoot}/include/catch2",
-        "${workspaceRoot}/include/fakeit"
+        "${workspaceRoot}/include/catch2"
       ],
       "defines": [
         "DEBUG=1"
