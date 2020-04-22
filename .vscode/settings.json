@@ -58,6 +58,20 @@
   "cmakeFormat.args": [
     "--config-file .cmake-format.py"
   ],
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "cmake.buildToolArgs": [
+    "-DDEBUG"
+  ],
+  "cmake.configureOnOpen": false,
+  "cmake.copyCompileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
+  "cmake.emscriptenSearchDirs": [
+    "/home/ahellwig/SDKs/emsdk"
+  ],
+  "cmake.enabledOutputParsers": [
+    "cmake",
+    "gcc",
+    "gnuld"
+  ],
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
   "doxdocgen.generic.returnTemplate": "@return {type} ",
