@@ -15,6 +15,11 @@
   "C_Cpp.default.configurationProvider": "${default}",
   "clang-format.language.cpp.style": "file",
   "clang-format.style": "file",
+  "[cmake]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "twxs.cmake"
+  },
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format",
     "editor.tabSize": 2,
@@ -51,8 +56,7 @@
   "cmakeFormat.exePath": "/usr/bin/cmake-format",
   "cmake.cmakePath": "/usr/bin/cmake",
   "cmakeFormat.args": [
-    "--config-file",
-    ".cmake-format.py"
+    "--config-file .cmake-format.py"
   ],
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
@@ -159,7 +163,8 @@
     ".vscode",
     ".clang-format",
     "Doxyfile",
-    "README.md"
+    "README.md",
+    "**/.vscode/**"
   ],
   "cSpell.enabledFiletypes": [
     "cpp",
