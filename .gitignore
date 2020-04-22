@@ -338,7 +338,11 @@ TSWLatexianTemp*
 *.gcda
 *.gcno
 
-!.gitkeep
+!out/bin/.gitkeep
+!out/cmake/.gitkeep
+!out/doc/.gitkeep
+!out/doc/**/.gitkeep
+!out//.gitkeep
 
 # Automake
 **/autom4te.cache/**
