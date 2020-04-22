@@ -97,7 +97,7 @@ unit-test: test
 	--reporter console \
 	--use-colour yes \
 	--abort \
-	--durations yes \
+	--durations no \
 	--filenames-as-tags \
 	--verbosity normal
 
