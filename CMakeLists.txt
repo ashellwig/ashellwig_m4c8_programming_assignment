@@ -28,8 +28,9 @@ target_include_directories(test_ashm4c8pa
   "${CMAKE_SOURCE_DIR}/include")
 
 include(CTest)
-include(ParseAndAddCatchTests)
-ParseAndAddCatchTests(test_ashm4c8pa)
+catch_discover_tests(test_ashm4c8pa,
+  EXTRA_ARGS --success --reporter console --use-colour yes --filenames-as-tags)
+
 
 
 # --- Uninstall Target ---
